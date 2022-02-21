@@ -39,8 +39,8 @@ var bankAccountThree = {
 
 function getDateOfHighestDeposit(account) {
 
-    let amountOfHighest = 0;
-    let getDateOfHighest = null;
+    let amountOfHighest = null;
+    let getDateOfHighest = 0;
 
     for (const transaction of account.transactions) {
         let isRelevant = false;
@@ -49,9 +49,10 @@ function getDateOfHighestDeposit(account) {
             isRelevant = true
         }
 
-        if ( isRelevant == true && transaction.amount > amountOfHighest )
+        if ( isRelevant == true && transaction.amount > amountOfHighest ) {
             amountOfHighest = transaction.amount
             getDateOfHighest = transaction.date
+        }
     }
     return getDateOfHighest
 }
