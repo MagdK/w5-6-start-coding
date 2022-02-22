@@ -51,7 +51,7 @@ function getDateOfHighestDeposit(account) {
 
         if ( isRelevant == true && transaction.amount > amountOfHighest ) {
             amountOfHighest = transaction.amount
-            getDateOfHighest = transaction.date
+            getDateOfHighest = transaction.date 
         }
     }
     return getDateOfHighest
